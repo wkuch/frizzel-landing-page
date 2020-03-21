@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { get } from '../../../helper/frizzelApiConnection'
+import { Loading } from '../../atoms/NavLink/Loading/Loading'
 
 const iconStyle = {
   maxHeight: '250px',
@@ -31,7 +32,7 @@ class Article extends Component {
     const state = this.state
     if (!state.image) {
       return (
-        <div>loading</div>
+        <Loading />
       )
     }
     return (
