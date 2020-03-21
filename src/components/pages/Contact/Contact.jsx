@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class Contact extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
-        return ( 
-            <div>
+  constructor (props) {
+    super(props)
+    this.state = { }
+  }
+
+  render () {
+    return (
+      <div>
                 Hello Contact
-            </div>
-         );
-    }
+      </div>
+    )
+  }
 }
- 
-export default Contact;
+
+export default Contact

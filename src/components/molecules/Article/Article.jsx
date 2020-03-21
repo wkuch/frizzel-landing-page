@@ -1,0 +1,50 @@
+import React, { Component } from 'react'
+import { get } from '../../../helper/frizzelApiConnection'
+
+class Article extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      title: undefined,
+      image: undefined,
+      text: undefined
+    }
+  }
+
+  componentDidMount () {
+    get('images/1', (jsonResponse) => {
+      console.log(jsonResponse)
+      this.setState({ title: jsonResponse.Title, image: jsonResponse.image, text: jsonResponse.Description })
+    })
+  }
+
+  getFullURL (urlPart) {
+    return window.apiURL + urlPart
+  }
+
+  render () {
+    const state = this.state
+    if (!state.image) {
+      return (
+        <div>loading</div>
+      )
+    }
+    return (
+      <div className='py-4 d-flex flex-column align-items-center'>
+        <div className='h2'>{state.title}</div>
+        <div className='d-flex align-items-start row'>
+          <img className='img-fluid rounded-lg col-md-8' src={this.getFullURL(state.image.url)} />
+          <div className='col-md'>{state.text}</div>
+        </div>
+        <div className='row justify-items-around align-items-start'>
+          <img className='img-fluid col-md' src='https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png' />
+          <img className='img-fluid col-md' src='https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png' />
+          <img className='img-fluid col-md' src='https://pbs.twimg.com/profile_images/1145954379268284416/VIBBICN0_400x400.png' />
+        </div>
+
+      </div>
+    )
+  }
+}
+
+export default Article
