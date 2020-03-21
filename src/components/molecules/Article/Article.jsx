@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import { get } from '../../../helper/frizzelApiConnection'
 
+const iconStyle = {
+  maxHeight: '250px',
+  width: 'auto'
+}
+
 class Article extends Component {
   constructor (props) {
     super(props)
@@ -30,16 +35,22 @@ class Article extends Component {
       )
     }
     return (
-      <div className='py-4 d-flex flex-column align-items-center'>
+      <div className='py-4 d-flex flex-column align-items-stretch'>
         <div className='h2'>{state.title}</div>
-        <div className='d-flex align-items-start row'>
+        <div className='d-flex align-items-start row my-4'>
           <img className='img-fluid rounded-lg col-md-8' src={this.getFullURL(state.image.url)} />
           <div className='col-md'>{state.text}</div>
         </div>
-        <div className='row justify-items-around align-items-start'>
-          <img className='img-fluid col-md' src='https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png' />
-          <img className='img-fluid col-md' src='https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png' />
-          <img className='img-fluid col-md' src='https://pbs.twimg.com/profile_images/1145954379268284416/VIBBICN0_400x400.png' />
+        <div className='row justify-content-around align-items-start my-4'>
+          <div>
+            <img style={iconStyle} className='col-md' src='https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png' />
+          </div>
+          <div>
+            <img style={iconStyle} className='col-md' src='https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png' />
+          </div>
+          <div>
+            <img style={iconStyle} className='col-md' src='https://pbs.twimg.com/profile_images/1145954379268284416/VIBBICN0_400x400.png' />
+          </div>
         </div>
 
       </div>
