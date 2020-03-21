@@ -10,7 +10,7 @@ export const Layout = (props) => {
       <div className='container flex-column d-flex justify-content-center mb-5'>
         <img className='mx-auto my-5' src={Logo} />
       </div>
-      <div className='container mb-5 sticky-top'>
+      <div className='container mb-5 sticky-top d-flex justify-content-center'>
         <Header />
       </div>
 
