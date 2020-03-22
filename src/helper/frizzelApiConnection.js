@@ -1,3 +1,4 @@
+import { request } from 'graphql-request'
 
 export const get = (resourceURI, callback) => {
   const baseUrl = window.apiURL

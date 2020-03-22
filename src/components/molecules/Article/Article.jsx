@@ -19,7 +19,6 @@ class Article extends Component {
 
   componentDidMount () {
     get('images/1', (jsonResponse) => {
-      console.log(jsonResponse)
       this.setState({ title: jsonResponse.Title, image: jsonResponse.image, text: jsonResponse.Description })
     })
   }
@@ -37,10 +36,10 @@ class Article extends Component {
     }
     return (
       <div className='py-4 d-flex flex-column align-items-stretch'>
-        <div className='h2'>{state.title}</div>
+        <div className='h1 text-center'>{state.title}</div>
         <div className='d-flex align-items-start row my-4'>
-          <img className='img-fluid rounded-lg col-md-8' src={this.getFullURL(state.image.url)} />
-          <div className='col-md'>{state.text}</div>
+          <img className='img-fluid rounded-lg col-md-6' src={this.getFullURL(state.image.url)} />
+          <div className='col-md h4'>{state.text}</div>
         </div>
         <div className='row justify-content-around align-items-start my-4'>
           <div>
