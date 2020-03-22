@@ -9,7 +9,7 @@ export const NavLink = props => (
       props.active && 'active'
     ])}
     >
-      <Link className='nav-link h4' to={props.to}>{props.text}</Link>
+      <Link className='nav-link h1' to={props.to}>{props.text}</Link>
     </li>
   </div>
 )
