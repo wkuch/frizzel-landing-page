@@ -37,8 +37,10 @@ class Article extends Component {
     return (
       <div className='py-4 d-flex flex-column align-items-stretch'>
         <div className='h1 text-center'>{state.title}</div>
-        <div className='d-flex align-items-start row my-4'>
-          <img className='img-fluid rounded-lg col-md-6' src={this.getFullURL(state.image.url)} />
+        <div className='d-flex align-items-start row my-4 rounded'>
+          <div className='col-md-6'>
+          <img className='img-fluid rounded-lg' src={this.getFullURL(state.image.url)} />
+          </div>
           <div className='col-md h4'>{state.text}</div>
         </div>
         <div className='row justify-content-around align-items-start my-4'>
