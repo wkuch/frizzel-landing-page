@@ -1,33 +1,62 @@
 import React, { Component } from 'react'
-import { useParams } from 'react-router-dom'
 import { Loading } from '../../atoms/NavLink/Loading/Loading'
+import { request } from 'graphql-request'
+
 
 export class GalleryDetail extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
-      id: undefined,
-      type: undefined
+      data: undefined
     }
   }
 
-  componentDidMount () {
-    const type = this.props.match.params.type
-    console.log(type)
-    this.setState({ type })
+  componentDidMount() {
+    const variables = {
+      id: this.props.match.params.id
+    }
+    const query = `
+      query getGallery($id: ID!){
+        gallery(id: $id) {
+          Typ
+          Description
+          images {
+            image {
+              url
+            }
+          }
+        }
+      }
+    `
+    request(window.apiURL + 'graphql', query, variables).then(data => {
+      console.log(data)
+      this.setState({ data: data.gallery })
+    })
+    // this.setState({ type })
   }
 
-  render () {
-    if (!this.state.type) {
+  render() {
+    const data = this.state.data
+    if (!data) {
       return (
         <Loading />
       )
     }
-    console.log(this.state.type)
-
     return (
       <div className='container'>
-        {this.state.type}
+        <div className='h1 py-4 text-center'>
+          {data.Typ}
+        </div>
+        <div className='row'>
+          {data.images.map((image, i) => {
+            return (
+              <div className='col-md-4 my-3'>
+                <img src={window.apiURL + image.image.url} className='img-fluid rounded-lg' />
+              </div>
+            )
+          }
+          )}
+        </div>
       </div>
     )
   }
