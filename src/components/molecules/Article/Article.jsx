@@ -13,11 +13,19 @@ class Article extends Component {
     this.state = {
       title: undefined,
       image: undefined,
-      text: undefined
+      text: undefined,
+      instaButton: undefined,
+      redBubbleButton: undefined
     }
   }
 
   componentDidMount () {
+    get('images/11', (jsonResponse) => {
+      this.setState({ instaButton: jsonResponse.image })
+    })
+    get('images/12', (jsonResponse) => {
+      this.setState({ redBubbleButton: jsonResponse.image })
+    })
     get('images/1', (jsonResponse) => {
       this.setState({ title: jsonResponse.Title, image: jsonResponse.image, text: jsonResponse.Description })
     })
@@ -25,6 +33,17 @@ class Article extends Component {
 
   getFullURL (urlPart) {
     return window.apiURL + urlPart
+  }
+
+  renderLogo(stateVariable){
+    if(!stateVariable){
+      return(
+        <Loading />
+      )
+    }
+    return(
+      <img style={iconStyle} className='col-md' src={this.getFullURL(stateVariable.url)} />
+    )
   }
 
   render () {
@@ -39,19 +58,23 @@ class Article extends Component {
         <div className='h1 text-center'>{state.title}</div>
         <div className='d-flex align-items-start row my-4 rounded'>
           <div className='col-md-6'>
-          <img className='img-fluid rounded-lg' src={this.getFullURL(state.image.url)} />
+            <img className='img-fluid rounded-lg' src={this.getFullURL(state.image.url)} />
           </div>
           <div className='col-md h4'>{state.text}</div>
         </div>
         <div className='row justify-content-around align-items-start my-4'>
           <div>
-            <img style={iconStyle} className='col-md' src='https://instagram-brand.com/wp-content/themes/ig-branding/assets/images/ig-logo-email.png' />
+            <a href='https://www.instagram.com/frizzelblizzel'>
+              {this.renderLogo(state.instaButton)}
+            </a>
           </div>
           <div>
             <img style={iconStyle} className='col-md' src='https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png' />
           </div>
           <div>
-            <img style={iconStyle} className='col-md' src='https://pbs.twimg.com/profile_images/1145954379268284416/VIBBICN0_400x400.png' />
+            <a href='https://www.redbubble.com/de/people/Frizzel/shop?ref=artist_title_name'>
+              {this.renderLogo(state.redBubbleButton)}
+            </a>
           </div>
         </div>
 
