@@ -25,6 +25,11 @@ export class Header extends Component {
       text: 'Kontakt',
       to: '/kontakt',
       active: !!window.location.pathname.match(/kontakt/)
+    },
+    {
+      text: 'Shop',
+      href: 'https://www.redbubble.com/de/people/Frizzel/shop?ref=artist_title_name',
+      active: false
     }]
     this.setState({ navItems })
   }
