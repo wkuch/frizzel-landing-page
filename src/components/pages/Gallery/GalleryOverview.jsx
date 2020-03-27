@@ -30,7 +30,7 @@ export class GalleryOverview extends Component {
   }
 
   renderGalleryPreview (gallery, i) {
-    const even = (i % 2) === 0 
+    const even = (i % 2) === 0
     return (
       <div key={i} className='d-flex flex-row rounded-lg justify-content-between my-3 row shadow-lg no-gutters'>
         <div className={c([
@@ -53,8 +53,10 @@ export class GalleryOverview extends Component {
             <div className={c([
               'h2',
               even ? 'align-self-start' : 'align-self-end'
-            ])}>{gallery.Typ}</div>
-            <Link to={'/gallerie/'+gallery.id} className='btn btn-secondary btn-lg m-3'>Mehr davon</Link>
+            ])}
+            >{gallery.Typ}
+            </div>
+            <Link to={'/gallerie/' + gallery.id} className='btn btn-secondary btn-lg m-3'>Mehr davon</Link>
             <div className='rounded-lg h4'>
               {gallery.Description}
             </div>
