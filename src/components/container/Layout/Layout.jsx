@@ -14,10 +14,10 @@ export const Layout = (props) => {
         <div className='container mb-5 sticky-top'>
           <Header />
         </div>
-        <div className='mt-5 bg-white'>
+        <div className='my-5 bg-white'>
           {props.children}
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   )
