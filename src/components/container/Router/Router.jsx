@@ -16,7 +16,7 @@ export const RouterConfig = () => (
   <Router>
     <Layout>
       <Switch>
-        <Route exact path='/kontakt' component={Contact} />
+        {/* <Route exact path='/kontakt' component={Contact} /> */}
         <Route exact path='/gallerie' component={GalleryOverview} />
         <Route path='/gallerie/:galleryID' component={GalleryDetail} />
         <Route path='/gallerie/:galleryID/:ImageID' component={GalleryDetail} />

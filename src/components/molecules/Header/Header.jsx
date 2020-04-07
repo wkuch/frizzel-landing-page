@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from '../../atoms/NavLink/NavLink'
-import { Loading } from '../../atoms/NavLink/Loading/Loading'
+import { Loading } from '../../atoms/Loading/Loading'
 
 export class Header extends Component {
   constructor (props) {
@@ -21,11 +21,11 @@ export class Header extends Component {
       to: '/gallerie',
       active: !!window.location.pathname.match(/gallerie/)
     },
-    {
-      text: 'Kontakt',
-      to: '/kontakt',
-      active: !!window.location.pathname.match(/kontakt/)
-    },
+    // {
+    //   text: 'Kontakt',
+    //   to: '/kontakt',
+    //   active: !!window.location.pathname.match(/kontakt/)
+    // },
     {
       text: 'Shop',
       href: 'https://www.redbubble.com/de/people/Frizzel/shop?ref=artist_title_name',
