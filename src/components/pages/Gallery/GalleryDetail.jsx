@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { Loading } from '../../atoms/NavLink/Loading/Loading'
+import { Loading } from '../../atoms/Loading/Loading'
 import { request } from 'graphql-request'
-import ReactModal from 'react-modal'
+import { ImgGallery } from '../../atoms/ImgGallery/ImgGallery'
 
 export class GalleryDetail extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       data: undefined,
-      detailOpen: false
+      images: undefined
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const variables = {
       id: this.props.match.params.galleryID
     }
@@ -21,46 +21,45 @@ export class GalleryDetail extends Component {
         gallery(id: $id) {
           Typ
           Description
-          images {
-            image {
-              url
-            }
+          images{
+            original{url}
+            thumbnail{url}
           }
         }
       }
     `
+
     request(window.apiURL + 'graphql', query, variables).then(data => {
       console.log(data)
-      this.setState({ data: data.gallery })
+      let images = []
+      data.gallery.images.forEach(image => {
+        images.push({
+          original: window.apiURL + image.original.url,
+          thumbnail: window.apiURL + image.thumbnail.url
+        })
+      })
+      this.setState({ data: data.gallery, images })
     })
     // this.setState({ type })
   }
 
-  render () {
+  render() {
     const data = this.state.data
     if (!data) {
       return (
         <Loading />
       )
     }
+    console.log(this.state.images)
     return (
       <div className='container'>
-        <div className='h1 py-4 text-center'>
-          {data.Typ}
+        <h1 className='text-center py-4'>{data.Typ}</h1>
+        <div className='col-12 col-md-8 mx-auto h4 mb-4'>
+          {data.Description}
         </div>
-        <div className='row'>
-          {data.images.map((image, i) => {
-            return (
-              <div className='col-md-4 my-3' onClick={() => this.setState({ detailOpen: true })}>
-                <img src={window.apiURL + image.image.url} className='img-fluid rounded-lg' />
-              </div>
-            )
-          }
-          )}
+        <div className='col-12 col-lg-8 m-auto'>
+          <ImgGallery images={this.state.images} />
         </div>
-        <ReactModal className='container border-0' style={{ overlay: { zIndex: '9999' } }} onRequestClose={() => this.setState({ detailOpen: false })} isOpen={this.state.detailOpen}>
-          <img className='img-fluid rounded-lg' src={window.apiURL + data.images[0].image.url} />
-        </ReactModal>
       </div>
     )
   }

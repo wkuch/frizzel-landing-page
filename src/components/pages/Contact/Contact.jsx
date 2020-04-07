@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Loading } from '../../atoms/NavLink/Loading/Loading'
+import { Loading } from '../../atoms/Loading/Loading'
 import { request } from 'graphql-request'
 import { FrizzelDropzone } from '../../molecules/Article/FrizzelDropzone/FrizzelDropzone'
 
@@ -27,7 +27,7 @@ class Contact extends Component {
 
     const query = `
     {
-      images {
+      request-form-contents {
         Title
         image {
           url
@@ -77,7 +77,7 @@ class Contact extends Component {
     console.log(this.state.styleImages)
     return (
       <div className='container'>
-        <div className='text-center h1 mt-3'>
+        <div className='text-center h1 pt-4'>
           Kontakt
         </div>
         <div className='d-flex flex-column'>
@@ -85,7 +85,7 @@ class Contact extends Component {
             Wenn du möchtest, dass ich für dich ein Bild genau nach deinen Vorstellungen male bist du hier genau richtig. Fülle as Formular unten aus damit ich gleich weiß was du dir vorstellst. Ich werde mich dann bei dir melden um die Details direkt mit dir zu klären.
           </div>
           <div className='my-3'>
-            <div className='h3'>Deine Kontaktdaten</div>
+            <div className='h2'>Deine Kontaktdaten</div>
             <div className='row'>
               <div className='d-flex flex-column mr-3 col-10 col-sm-6 col-md-4 col-lg-3'>
                 <label for='userName' className='h5'>Name</label>
@@ -96,27 +96,27 @@ class Contact extends Component {
                 <input id='email' className='form-control-lg' type='text' placeholder='Email' onChange={e => this.handleInputChange(e.target.value, 'email')} value={this.state.userData.email} />
               </div>
             </div>
-            <div className='h3 mt-3'>Stil</div>
+            <div className='h2 mt-4'>Stil</div>
             <div className='row col-lg-8'>
               {this.renderCheckBoxWithImage(this.state.styleImages[8])}
               {this.renderCheckBoxWithImage(this.state.styleImages[8])}
               {this.renderCheckBoxWithImage(this.state.styleImages[8])}
             </div>
-            <div className='h3 mt-3'>Detailgrad</div>
+            <div className='h2 mt-4'>Detailgrad</div>
             <div className='row col-lg-8'>
               {this.renderCheckBoxWithImage(this.state.styleImages[11])}
               {this.renderCheckBoxWithImage(this.state.styleImages[11])}
               {this.renderCheckBoxWithImage(this.state.styleImages[11])}
             </div>
-            <div className='h3 mt-3'>Wieviele Charaktäre</div>
+            <div className='h2 mt-4'>Wieviele Charaktäre</div>
             <div className='row col-lg-8'>
               {this.renderCheckBoxWithImage(this.state.styleImages[8])}
               {this.renderCheckBoxWithImage(this.state.styleImages[12])}
               {this.renderCheckBoxWithImage(this.state.styleImages[13])}
             </div>
-            <div className='h3 mt-3'>Referenzbild</div>
+            <div className='h2 mt-4'>Referenzbild</div>
               <FrizzelDropzone />
-            <div className='h3 mt-3'>Zusätzliche Infos für mich</div>
+            <div className='h2 mt-4'>Zusätzliche Infos für mich</div>
             
             <textarea className="form-control"  rows="3"></textarea>
 

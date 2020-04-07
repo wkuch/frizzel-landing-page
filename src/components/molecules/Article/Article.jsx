@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { get } from '../../../helper/frizzelApiConnection'
-import { Loading } from '../../atoms/NavLink/Loading/Loading'
+import { Loading } from '../../atoms/Loading/Loading'
 
 const iconStyle = {
   maxHeight: '250px',
@@ -64,7 +64,7 @@ class Article extends Component {
         </div>
         <div className='row justify-content-around align-items-start my-4'>
           <div>
-            <a href='https://www.instagram.com/frizzelblizzel'>
+            <a target='_blank' href='https://www.instagram.com/frizzelblizzel'>
               {this.renderLogo(state.instaButton)}
             </a>
           </div>
@@ -72,7 +72,7 @@ class Article extends Component {
             <img style={iconStyle} className='col-md' src='https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png' />
           </div>
           <div>
-            <a href='https://www.redbubble.com/de/people/Frizzel/shop?ref=artist_title_name'>
+            <a target='_blank' href='https://www.redbubble.com/de/people/Frizzel/shop?ref=artist_title_name'>
               {this.renderLogo(state.redBubbleButton)}
             </a>
           </div>

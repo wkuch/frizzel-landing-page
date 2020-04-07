@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Loading } from '../../atoms/NavLink/Loading/Loading'
+import { Loading } from '../../atoms/Loading/Loading'
 import c from 'classnames'
 import { Link } from 'react-router-dom'
 import { request } from 'graphql-request'

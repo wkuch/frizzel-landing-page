@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css'
+import "react-image-gallery/styles/css/image-gallery.css";
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
