@@ -1,14 +1,16 @@
 body {
   height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'frz';
+  font-family: 'frz', Fallback, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
   font-family: frz;
-  src: url(./frz.woff)
+  src:  url(./frz.woff) format('woff'),
+        url(./frz.woff2) format('woff2'), /* Super Modern Browsers */
+        url(./frz.ttf)  format('truetype') /* Safari, Android, iOS */
 }
 
 
