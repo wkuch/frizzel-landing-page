@@ -3,7 +3,6 @@ import c from 'classnames'
 import { Link } from 'react-router-dom'
 
 export const NavLink = props => {
-  console.log(props.href)
   return (
 
     <div className='nav-item'>
@@ -21,7 +20,7 @@ export const NavLink = props => {
 const renderLink = (props) => {
   if (props.href) {
     return (
-      <a className='nav-link h1' target='_blank' href={props.href} >{props.text}</a>
+      <a className='nav-link h1' rel="noopener noreferrer" target='_blank' href={props.href} >{props.text}</a>
     )
   }
   return (

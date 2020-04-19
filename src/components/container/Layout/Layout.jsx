@@ -9,7 +9,7 @@ export const Layout = (props) => {
       <div className='bg' style={{ backgroundImage: `url(${Tabete})` }} />
       <div>
         <div className='container flex-column d-flex col-10 col-md-7 col-lg-3 justify-content-center mb-5'>
-          <img className='mx-auto my-5 img-fluid' src={Logo} />
+          <img className='mx-auto my-5 img-fluid' src={Logo} alt='Frizzel-Logo' />
         </div>
         <div className='container mb-5 sticky-top'>
           <Header />

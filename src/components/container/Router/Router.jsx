@@ -6,21 +6,16 @@ import {
 } from 'react-router-dom'
 
 import Home from '../../pages/Home/Home'
-import Contact from '../../pages/Contact/Contact'
 import Layout from '../Layout/Layout'
 import { NotFound } from '../../pages/NotFound/NotFound'
-import { GalleryOverview } from '../../pages/Gallery/GalleryOverview'
-import { GalleryDetail } from '../../pages/Gallery/GalleryDetail'
+import { DataProtection } from '../../pages/DataProtection/DataProtection'
 
 export const RouterConfig = () => (
   <Router>
     <Layout>
       <Switch>
-        {/* <Route exact path='/kontakt' component={Contact} /> */}
-        <Route exact path='/gallerie' component={GalleryOverview} />
-        <Route path='/gallerie/:galleryID' component={GalleryDetail} />
-        <Route path='/gallerie/:galleryID/:ImageID' component={GalleryDetail} />
         <Route exact path='/' component={Home} />
+        <Route exact path='/data-protection' component={DataProtection} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
