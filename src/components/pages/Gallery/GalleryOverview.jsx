@@ -57,7 +57,7 @@ export class GalleryOverview extends Component {
             >{gallery.Typ}
             </div>
             <Link to={'/gallerie/' + gallery.id} className='btn btn-secondary btn-lg m-3'>Mehr davon</Link>
-            <div className='rounded-lg h4'>
+            <div className='h4'>
               {gallery.Description}
             </div>
           </div>
