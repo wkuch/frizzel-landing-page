@@ -11,7 +11,7 @@ export const Layout = (props) => {
         <div className='container flex-column d-flex col-10 col-md-7 col-lg-3 justify-content-center mb-5'>
           <img className='mx-auto my-5 img-fluid' src={Logo} alt='Frizzel-Logo' />
         </div>
-        <div className='container mb-5 sticky-top'>
+        <div className='container mb-5'>
           <Header />
         </div>
         <div className='my-5 bg-white'>

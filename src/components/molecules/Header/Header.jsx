@@ -32,12 +32,12 @@ export class Header extends Component {
     }
     return (
       <div className='frizzelHeader rounded-lg p-2 '>
-        <nav className='navbar navbar-expand-md navbar-light d-flex justify-content-md-center justify-content-start'>
-          <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
+        <nav className='navbar navbar-expand navbar-light d-flex justify-content-center'>
+          {/* <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
             <span className='navbar-toggler-icon' />
-          </button>
+          </button> */}
           <div className='d-flex'>
-            <div className='collapse navbar-collapse ' id='navbarNavDropdown'>
+            <div className=' navbar-collapse ' id='navbarNavDropdown'>
               <ul className='navbar-nav'>
                 {
                   this.state.navItems.map((navItem, i) => (

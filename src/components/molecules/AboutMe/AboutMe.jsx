@@ -23,17 +23,23 @@ class AboutMe extends Component {
         Title
         Description
         InstaButton{url}
-        redbubbleButton{url}
+        RedbubbleButton{url}
         about_me_parts{
-          topic
-          text
-          image{url}
+          Topic
+          Text
+          Image{
+            url
+          }
         }
       }
     }`
-    request(window.apiURL + 'graphql', query).then(data => {
+    console.log('about to request')
+    request(window.apiURL + '/graphql', query).then(data => {
+      console.log('got it')
 
+      console.log(data.aboutMe)
       this.setState({ aboutMeData: data.aboutMe })
+
     })
   }
 
@@ -49,16 +55,16 @@ class AboutMe extends Component {
           i % 2 === 0 ? 'order-first' : 'order-md-last'
         ])}>
           <div className='h2 text-center'>
-            {part.topic}
+            {part.Topic}
           </div>
-          <img className='img-fluid rounded-lg' src={this.getFullURL(part.image.url)} alt={'Über mich Bild Nr. '+i} />
+          <img className='img-fluid rounded-lg' src={this.getFullURL(part.Image.url)} alt={'Über mich Bild Nr. '+i} />
         </div>
         <div className='col-md-5 mt-2 mt-md-0 '>
           
           <div className='txtBG p-5 h4'
             style={{ backgroundImage: `url(${textbackground})` }}
           >
-            {part.text}
+            {part.Text}
           </div>
         </div>
       </div>
@@ -67,12 +73,12 @@ class AboutMe extends Component {
 
   render() {
     const data = this.state.aboutMeData
-
     if (!data) {
       return (
         <Loading />
-      )
-    }
+        )
+      }
+    console.log(data)
     return (
       <div className='py-4 d-flex flex-column align-items-stretch'>
         <div className='h1 text-center'>{data.Title}</div>
@@ -87,7 +93,7 @@ class AboutMe extends Component {
           </div>
           <div>
             <a target='_blank' rel="noopener noreferrer" href='https://www.redbubble.com/de/people/Frizzel/shop?ref=artist_title_name'>
-              <img alt='redbubble link button' style={iconStyle} className='col-md' src={this.getFullURL(data.redbubbleButton.url)} />
+              <img alt='redbubble link button' style={iconStyle} className='col-md' src={this.getFullURL(data.RedbubbleButton.url)} />
             </a>
           </div>
         </div>
