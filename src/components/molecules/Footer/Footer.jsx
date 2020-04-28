@@ -12,7 +12,7 @@ export const Footer = (props) => (
             <a  target='_blank' rel="noopener noreferrer" href='https://www.redbubble.com/de/people/Frizzel/shop?ref=artist_title_name'>Redbubble</a>
           </div>
           <div>
-            <a  href='mailto:frizzelblizzel@gmail.com'>info@frizzelblizzel.de</a>
+            <a  href='mailto:info@frizzelblizzel.de'>info@frizzelblizzel.de</a>
           </div>
           <Link to='data-protection'>Datenschutzerklärung</Link>
       </div>

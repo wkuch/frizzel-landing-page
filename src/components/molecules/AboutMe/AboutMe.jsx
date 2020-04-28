@@ -3,6 +3,7 @@ import { request } from 'graphql-request'
 import { Loading } from '../../atoms/Loading/Loading'
 import textbackground from '../../../assets/backgrounds/textbackground.png'
 import c from 'classnames'
+import ReactMarkdown from 'react-markdown'
 
 const iconStyle = {
   maxHeight: '250px',
@@ -26,7 +27,7 @@ class AboutMe extends Component {
         RedbubbleButton{url}
         about_me_parts{
           Topic
-          Text
+          FormattedText
           Image{
             url
           }
@@ -64,7 +65,11 @@ class AboutMe extends Component {
           <div className='txtBG p-5 h4'
             style={{ backgroundImage: `url(${textbackground})` }}
           >
-            {part.Text}
+            <ReactMarkdown source={part.FormattedText} />
+            
+          </div>
+          <div>
+            
           </div>
         </div>
       </div>
