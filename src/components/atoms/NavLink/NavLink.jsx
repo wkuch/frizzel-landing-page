@@ -20,10 +20,10 @@ export const NavLink = props => {
 const renderLink = (props) => {
   if (props.href) {
     return (
-      <a className='nav-link h1' rel="noopener noreferrer" target='_blank' href={props.href} >{props.text}</a>
+      <a style={{fontFamily: 'frz-capital'}} className='nav-link h1' rel="noopener noreferrer" target='_blank' href={props.href} >{props.text}</a>
     )
   }
   return (
-    <Link className='nav-link h1' to={props.to} >{props.text}</Link>
+    <Link style={{fontFamily: 'frz-capital'}} className='nav-link h1' to={props.to} >{props.text}</Link>
   )
 }

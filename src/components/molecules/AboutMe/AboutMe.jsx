@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { request } from 'graphql-request'
 import { Loading } from '../../atoms/Loading/Loading'
 import textbackground from '../../../assets/backgrounds/textbackground.png'
+import textbackgroundBlue from '../../../assets/backgrounds/textbackground-blue.png'
 import c from 'classnames'
 import ReactMarkdown from 'react-markdown'
 
@@ -55,7 +56,7 @@ class AboutMe extends Component {
           'col-md-5',
           i % 2 === 0 ? 'order-first' : 'order-md-last'
         ])}>
-          <div className='h2 text-center'>
+          <div style={{fontFamily: 'frz-capital', backgroundImage: `url(${textbackgroundBlue})`}} className='h2 text-center txtBG'>
             {part.Topic}
           </div>
           <img className='img-fluid rounded-lg' src={this.getFullURL(part.Image.url)} alt={'Über mich Bild Nr. '+i} />
@@ -66,7 +67,6 @@ class AboutMe extends Component {
             style={{ backgroundImage: `url(${textbackground})` }}
           >
             <ReactMarkdown source={part.FormattedText} />
-            
           </div>
           <div>
             
@@ -86,7 +86,9 @@ class AboutMe extends Component {
     console.log(data)
     return (
       <div className='py-4 d-flex flex-column align-items-stretch'>
-        <div className='h1 text-center'>{data.Title}</div>
+        <div className='d-flex flex-column  align-items-center'>
+        <div style={{fontFamily: 'frz-capital', backgroundImage: `url(${textbackgroundBlue})`}} className='h1 p-3 text-center txtBG'>{data.Title}</div>
+        </div>
         {data.about_me_parts.map((part, i) => {
           return this.renderAboutMePart(part, i)
         })}

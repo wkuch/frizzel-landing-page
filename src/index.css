@@ -1,18 +1,23 @@
 body {
   height: 100vh;
   margin: 0;
-  font-family: 'frz', Fallback, sans-serif;
+  font-family: 'frz-regular', Fallback, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
-  font-family: frz;
-  src:  url(./frz.woff) format('woff'),
-        url(./frz.woff2) format('woff2'), /* Super Modern Browsers */
-        url(./frz.ttf)  format('truetype') /* Safari, Android, iOS */
+  font-family: 'frz-capital';
+  src:  url(./assets/fonts/kapital/frz.woff) format('woff'),
+        url(./assets/fonts/kapital/frz.woff2) format('woff2'), /* Super Modern Browsers */
+        url(./assets/fonts/kapital/frz.ttf)  format('truetype') /* Safari, Android, iOS */
 }
-
+@font-face {
+  font-family: 'frz-regular';
+  src:  url(./assets/fonts/regular/frz.woff) format('woff'),
+        url(./assets/fonts/regular/frz.woff2) format('woff2'), /* Super Modern Browsers */
+        url(./assets/fonts/regular/frz.ttf)  format('truetype') /* Safari, Android, iOS */
+}
 
 .bg {
     min-height: 100vh;
