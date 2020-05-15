@@ -14,7 +14,12 @@ export const Footer = (props) => (
           <div>
             <a  href='mailto:info@frizzelblizzel.de'>info@frizzelblizzel.de</a>
           </div>
+          <div>
           <Link to='data-protection'>Datenschutzerklärung</Link>
+          </div>
+          <div>
+          <Link to='impressum'>Impressum</Link>
+          </div>
       </div>
     </div>
   </div>
