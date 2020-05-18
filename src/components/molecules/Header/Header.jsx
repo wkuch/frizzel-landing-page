@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from '../../atoms/NavLink/NavLink'
 import { Loading } from '../../atoms/Loading/Loading'
+import textbackground from '../../../assets/backgrounds/textbackground.png'
+
 
 export class Header extends Component {
   constructor (props) {
@@ -41,7 +43,9 @@ export class Header extends Component {
               <ul className='navbar-nav'>
                 {
                   this.state.navItems.map((navItem, i) => (
-                    <NavLink key={i} text={navItem.text} to={navItem.to} href={navItem.href} active={navItem.active} />
+                    <div style={i === 0 ? { backgroundImage: `url(${textbackground})`}:{}} className='txtBG'>
+                      <NavLink key={i} text={navItem.text} to={navItem.to} href={navItem.href} active={navItem.active} />
+                    </div>
                   ))
                 }
               </ul>
