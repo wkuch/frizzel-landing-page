@@ -6,7 +6,7 @@ export const Impressum = () => (
       <h1>Impressum</h1>
       <p>Angaben gemäß § 5 TMG</p>
       <p>Johanna Mensch <br />
-      Nörlingerstr. 11<br />
+      Nördlingerstr. 11<br />
         74074 Heilbronn <br />
       </p>
       <p><strong>Kontakt:</strong> <br />
