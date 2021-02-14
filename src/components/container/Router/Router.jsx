@@ -9,7 +9,6 @@ import Home from '../../pages/Home/Home'
 import Layout from '../Layout/Layout'
 import { NotFound } from '../../pages/NotFound/NotFound'
 import { DataProtection } from '../../pages/DataProtection/DataProtection'
-import { Impressum } from '../../pages/Impressum/Impressum'
 
 
 export const RouterConfig = () => (
