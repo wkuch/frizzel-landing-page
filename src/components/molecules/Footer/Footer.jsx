@@ -17,9 +17,6 @@ export const Footer = (props) => (
           <div>
           <Link to='data-protection'>Datenschutzerklärung</Link>
           </div>
-          <div>
-          <Link to='impressum'>Impressum</Link>
-          </div>
       </div>
     </div>
   </div>

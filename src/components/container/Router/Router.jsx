@@ -19,7 +19,6 @@ export const RouterConfig = () => (
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/data-protection' component={DataProtection} />
-        <Route exact path='/impressum' component={Impressum} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
