@@ -1,5 +1,3 @@
-### Repo for [FrizzelBlizzel.de](https://www.frizzelblizzel.de)
-
 Landing page for [FrizzelBlizzel](https://www.instagram.com/frizzelblizzel/) instagram.
 Since the original scope of the project was bigger [this branch](https://github.com/wkuch/landing-page/tree/slimVersion) is currenctly deployed. 
 
